@@ -10,7 +10,7 @@ Rough instructons on how to build [minicron](https://github.com/jamesrwhite/mini
 
 - Clone this repo and [minicron](https://github.com/jamesrwhite/minicron) locally.
 
-- Install core dependencies 
+- Install core dependencies
 ```
 gem install bundler geminabox
 ```
@@ -18,7 +18,7 @@ gem install bundler geminabox
 - Start the geminabox server
 ```
 cd minicron-build
-rackup gem-server/gem.ru
+rackup gem-server/config.ru
 ```
 
 - Build and install the minicron gem
