@@ -6,7 +6,7 @@ DIR="`dirname \"$0\"`"
 DIR="`cd \"$DIR\" && pwd`"
 
 # Override the directory location if required
-if [ "test$OVERRIDE_DIR" == "test$OVERRIDE_DIR" ]; then
+if [ "test" != "test$OVERRIDE_DIR" ]; then
     DIR=$OVERRIDE_DIR
 fi
 
