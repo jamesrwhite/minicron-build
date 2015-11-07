@@ -46,6 +46,7 @@ build/minicron-*
 build/packaging/vendor
 build/packaging/traveling*
 build/geminabox
+data
 
 # Vagrant
 .vagrant
