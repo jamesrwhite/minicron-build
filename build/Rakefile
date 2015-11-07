@@ -2,7 +2,7 @@
 require 'bundler/setup'
 
 PACKAGE_NAME = "minicron"
-VERSION = "0.8"
+VERSION = "0.8.1"
 
 # http://traveling-ruby.s3-us-west-2.amazonaws.com/list.html
 TRAVELING_RUBY_VERSION = "20150715-2.2.2"
