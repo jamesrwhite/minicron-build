@@ -119,7 +119,11 @@ namespace :package do
     sh "rm -rf packaging/vendor/ruby/2.2.0/bundler" # if multiple clones of same repo, may load in wrong one
 
     Bundler.with_clean_env do
-      sh "cd packaging/tmp && env BUNDLE_IGNORE_CONFIG=1 bundle install --path ../vendor"
+      if ARGV.first == "package:osx"
+        sh "cd packaging/tmp && bundle config build.eventmachine --with-cppflags=-I/usr/local/opt/openssl/include && bundle install --path ../vendor"
+      else
+        sh "cd packaging/tmp && env BUNDLE_IGNORE_CONFIG=1 bundle install --path ../vendor"
+      end
     end
 
     sh "rm -rf packaging/tmp"
