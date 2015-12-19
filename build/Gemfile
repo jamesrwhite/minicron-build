@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 source "http://localhost:9999" do
-  gem 'minicron', '0.8.2'
+  gem 'minicron', '0.8.3'
 end
 
 # explicit requirements matching to traveling-ruby native gems
