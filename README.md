@@ -17,13 +17,13 @@ gem install bundler geminabox
 
 - Start the geminabox server
 ```
-cd minicron-build
+cd ~/path/to/minicron-build
 rackup gem-server/config.ru
 ```
 
 - Build and install the minicron gem
 ```
-cd minicron
+cd ~/path/to/minicron
 bundle
 gem build minicron.gemspec
 ```
@@ -33,4 +33,19 @@ gem build minicron.gemspec
 gem push minicron-*VERSION*.gem --host http://127.0.0.1:9999
 ```
 
-**TODO:** finish the rest of this..
+- Build the minicron package(s)
+```
+cd ~/path/to/minicron-build/build
+bundle
+rake package
+```
+This should create 3 directories with the naming scheme `minicron-VERSION-PLATFORM`
+where platform is one of `osx, linux-x86, linux-x86_64` and version is `0.8.3`. To
+only package minicron for one platform you can append `:platform` to the rake task
+e.g `rake package:osx`.
+
+- Run minicron!
+```
+minicron-0.8.3-linux-x86_64/minicron -v
+```
+There should now be an executable shell script in each of the 3 directories
