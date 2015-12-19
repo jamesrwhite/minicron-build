@@ -1,9 +1,7 @@
 #!/bin/bash
 set -e
 
-# Figure out where this script is located.
-DIR="`dirname \"$0\"`"
-DIR="`cd \"$DIR\" && pwd`"
+DIR="/opt/minicron"
 
 # Override the directory location if required
 if [ "test" != "test$OVERRIDE_DIR" ]; then
