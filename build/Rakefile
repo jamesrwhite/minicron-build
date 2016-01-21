@@ -2,7 +2,7 @@
 require 'bundler/setup'
 
 PACKAGE_NAME = "minicron"
-VERSION = "0.8.4"
+VERSION = "0.9.0"
 
 # http://traveling-ruby.s3-us-west-2.amazonaws.com/list.html
 TRAVELING_RUBY_VERSION = "20150715-2.2.2"
@@ -116,6 +116,11 @@ namespace :package do
     sh "mkdir -p packaging/tmp"
     sh "cp Gemfile* packaging/tmp/"
 
+    # Remove any previous builds
+    sh "rm -rf packaging/vendor/ruby/2.2.0/bin/#{PACKAGE_NAME}"
+    sh "rm -rf packaging/vendor/ruby/2.2.0/gems/#{PACKAGE_NAME}-#{VERSION}"
+    sh "rm -rf packaging/vendor/ruby/2.2.0/specifications/#{PACKAGE_NAME}-#{VERSION}.gemspec"
+
     sh "rm -rf packaging/vendor/ruby/2.2.0/bundler" # if multiple clones of same repo, may load in wrong one
 
     Bundler.with_clean_env do
@@ -181,6 +186,9 @@ def create_package(target)
   NATIVE_GEMS.each do |gem, version|
     sh "tar -xzf packaging/traveling-ruby-#{TRAVELING_RUBY_VERSION}-#{target}-#{gem}-#{version}.tar.gz -C #{package_dir}/lib/vendor/ruby"
   end
+
+  sh "tar -czf #{package_dir}.tar.gz #{package_dir}"
+  sh "rm -rf #{package_dir}"
 end
 
 def download_runtime(target)

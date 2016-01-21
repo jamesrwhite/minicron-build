@@ -15,4 +15,5 @@ gem 'thin', '1.6.3'
 
 group :development do
   gem 'rake'
+  gem 'geminabox'
 end
