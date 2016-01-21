@@ -114,7 +114,8 @@ namespace :package do
 
     sh "rm -rf packaging/tmp"
     sh "mkdir -p packaging/tmp"
-    sh "cp Gemfile* packaging/tmp/"
+    sh "rm -f Gemfile.lock"
+    sh "cp Gemfile packaging/tmp/"
 
     # Remove any previous builds
     sh "rm -rf packaging/vendor/ruby/2.2.0/bin"
