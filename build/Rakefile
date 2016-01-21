@@ -117,9 +117,9 @@ namespace :package do
     sh "cp Gemfile* packaging/tmp/"
 
     # Remove any previous builds
-    sh "rm -rf packaging/vendor/ruby/2.2.0/bin/#{PACKAGE_NAME}"
-    sh "rm -rf packaging/vendor/ruby/2.2.0/gems/#{PACKAGE_NAME}-#{VERSION}"
-    sh "rm -rf packaging/vendor/ruby/2.2.0/specifications/#{PACKAGE_NAME}-#{VERSION}.gemspec"
+    sh "rm -rf packaging/vendor/ruby/2.2.0/bin"
+    sh "rm -rf packaging/vendor/ruby/2.2.0/gems"
+    sh "rm -rf packaging/vendor/ruby/2.2.0/specifications"
 
     sh "rm -rf packaging/vendor/ruby/2.2.0/bundler" # if multiple clones of same repo, may load in wrong one
 
