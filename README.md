@@ -40,12 +40,12 @@ bundle
 rake package
 ```
 This should create 3 directories with the naming scheme `minicron-VERSION-PLATFORM`
-where platform is one of `osx, linux-x86, linux-x86_64` and version is `0.9.1`. To
+where platform is one of `osx, linux-x86, linux-x86_64` and version is `0.9.2`. To
 only package minicron for one platform you can append `:platform` to the rake task
 e.g `rake package:osx`.
 
 - Run minicron!
 ```
-minicron-0.9.1-linux-x86_64/minicron -v
+minicron-0.9.2-linux-x86_64/minicron -v
 ```
 There should now be an executable shell script in each of the 3 directories
