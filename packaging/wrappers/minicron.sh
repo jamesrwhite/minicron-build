@@ -16,4 +16,4 @@ unset BUNDLE_IGNORE_CONFIG
 export MINICRON_IS_PACKAGED="1"
 
 # Run the actual app using the bundled Ruby interpreter, with Bundler activated.
-exec "$DIR/lib/ruby/bin/ruby" -rbundler/setup $DIR/lib/vendor/ruby/2.2.0/bin/minicron "$@"
+eval "$DIR/lib/ruby/bin/ruby" -rbundler/setup $DIR/lib/vendor/ruby/2.2.0/bin/minicron "$@"
